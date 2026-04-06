@@ -83,7 +83,7 @@ const ProductList: React.FC = () => {
                     </button>
                     
                     <button 
-                      className="p-1.5 text-white/40 hover:text-white hover:bg-white/10 rounded-lg transition-colors -ml-4 z-10 bg-card/50"
+                      className="p-1.5 text-white/40 hover:text-white hover:bg-white/10 rounded-lg transition-colors z-10 bg-card/50"
                       title="More Options"
                     >
                       <MoreVertical size={18} />
