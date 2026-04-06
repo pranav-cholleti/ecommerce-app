@@ -3,11 +3,11 @@ import { Home, BarChart2, ShoppingBag, Users, Settings, LogOut } from 'lucide-re
 
 const Sidebar: React.FC = () => {
   const menuItems = [
-    { name: 'Dashboard', icon: <Home size={20} />, active: true },
-    { name: 'Analytics', icon: <BarChart2 size={20} />, active: false },
-    { name: 'Products', icon: <ShoppingBag size={20} />, active: false },
-    { name: 'Customers', icon: <Users size={20} />, active: false },
-    { name: 'Settings', icon: <Settings size={20} />, active: false },
+    { name: 'Dashboard', icon: <Home size={20} />, active: true, color: 'text-primary' },
+    { name: 'Analytics', icon: <BarChart2 size={20} />, active: false, color: 'text-blue-500' },
+    { name: 'Products', icon: <ShoppingBag size={20} />, active: false, color: 'text-green-500' },
+    { name: 'Customers', icon: <Users size={20} />, active: false, color: 'text-yellow-500' },
+    { name: 'Settings', icon: <Settings size={20} />, active: false, color: 'text-purple-500' },
   ];
 
   return (
@@ -25,14 +25,14 @@ const Sidebar: React.FC = () => {
         {menuItems.map((item) => (
           <button
             key={item.name}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${ 
               item.active 
                 ? 'bg-primary/10 text-primary border border-primary/20 shadow-lg shadow-primary/5' 
-                : 'text-white/40 hover:text-white hover:bg-white/5'
+                : `${item.color} hover:text-white hover:bg-white/5` 
             }`}
           >
             {item.icon}
-            <span className="font-medium">{item.name}</span>
+            <span className={`font-medium ${item.active ? '' : item.color}`}>{item.name}</span>
           </button>
         ))}
       </nav>
